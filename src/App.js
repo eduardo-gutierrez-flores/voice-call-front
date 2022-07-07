@@ -14,7 +14,7 @@ import AgoraRTC from "agora-rtc-sdk-ng";
 import LeaveAlert from './components/LeaveAlert'
 import SendCall from './components/SendCall';
 
-const socket = io.connect('https://8c39-187-187-224-119.ngrok.io');
+const socket = io.connect('https://voice-call-socket.herokuapp.com/');
 
 function App() {
     const [call, setCall] = useState()
@@ -57,7 +57,7 @@ function App() {
     }
     
     const createCall = (token, id, nameUser) => {
-        console.log(name);
+        console.log('CALL TO ', nameUser);
         setCallInProsess(true);
         setSendCall({name: nameUser, nameEmit: name, id, token, room: `${id}${socket.id}`})
         socket.emit('create_call', {nameEmit: name, name: nameUser, id, token, room: `${id}${socket.id}`})

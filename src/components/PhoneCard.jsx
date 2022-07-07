@@ -52,8 +52,6 @@ const PhoneCard = ({user, initCall, rtc, callInProsess, userInCall}) => {
         return `${separate[0].charAt(0).toUpperCase()}${separate[0].slice(1)} ${separate[1] ? separate[1].charAt(0).toUpperCase(): ''}${separate[1] ? separate[1].slice(1): ''}`
     }
 
-    console.log(!users?.some((id) => id === user.id), !callInProsess);
-
     useEffect(() => {
         setUsers(userInCall)
     }, [userInCall])
