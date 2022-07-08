@@ -14,7 +14,7 @@ import AgoraRTC from "agora-rtc-sdk-ng";
 import LeaveAlert from './components/LeaveAlert'
 import SendCall from './components/SendCall';
 
-const socket = io.connect('http://localhost:3001/');
+const socket = io.connect('https://voice-call-socket.herokuapp.com/');
 
 function App() {
     const [call, setCall] = useState()
