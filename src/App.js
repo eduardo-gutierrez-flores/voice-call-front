@@ -162,6 +162,9 @@ function App() {
                     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                         <Grid item xs={6}>
                             <Box sx={{display: 'flex', margin: '2rem auto', width: '300px', gap: '1rem', flexDirection: 'column'}}>
+                                <Typography variant="h6" gutterBottom component="div" color='green'>
+                                    Usuarios Conectados
+                                </Typography>
                                 {users.map((user) =>
                                     <PhoneCard
                                         user={user}
