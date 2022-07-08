@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/voice-call-front/static/css/main.a617e044.chunk.css",
-    "main.js": "/voice-call-front/static/js/main.b8102800.chunk.js",
-    "main.js.map": "/voice-call-front/static/js/main.b8102800.chunk.js.map",
+    "main.js": "/voice-call-front/static/js/main.dd18c4ce.chunk.js",
+    "main.js.map": "/voice-call-front/static/js/main.dd18c4ce.chunk.js.map",
     "runtime-main.js": "/voice-call-front/static/js/runtime-main.621580fb.js",
     "runtime-main.js.map": "/voice-call-front/static/js/runtime-main.621580fb.js.map",
-    "static/js/2.47829807.chunk.js": "/voice-call-front/static/js/2.47829807.chunk.js",
-    "static/js/2.47829807.chunk.js.map": "/voice-call-front/static/js/2.47829807.chunk.js.map",
+    "static/js/2.6f565a71.chunk.js": "/voice-call-front/static/js/2.6f565a71.chunk.js",
+    "static/js/2.6f565a71.chunk.js.map": "/voice-call-front/static/js/2.6f565a71.chunk.js.map",
     "static/js/3.926a51cc.chunk.js": "/voice-call-front/static/js/3.926a51cc.chunk.js",
     "static/js/3.926a51cc.chunk.js.map": "/voice-call-front/static/js/3.926a51cc.chunk.js.map",
     "index.html": "/voice-call-front/index.html",
     "static/css/main.a617e044.chunk.css.map": "/voice-call-front/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.47829807.chunk.js.LICENSE.txt": "/voice-call-front/static/js/2.47829807.chunk.js.LICENSE.txt"
+    "static/js/2.6f565a71.chunk.js.LICENSE.txt": "/voice-call-front/static/js/2.6f565a71.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.621580fb.js",
-    "static/js/2.47829807.chunk.js",
+    "static/js/2.6f565a71.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.b8102800.chunk.js"
+    "static/js/main.dd18c4ce.chunk.js"
   ]
 }
