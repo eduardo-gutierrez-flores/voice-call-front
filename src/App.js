@@ -13,6 +13,7 @@ import CallAlert from './components/CallAlert';
 import AgoraRTC from "agora-rtc-sdk-ng";
 import LeaveAlert from './components/LeaveAlert'
 import SendCall from './components/SendCall';
+import Typography from '@mui/material/Typography';
 
 const socket = io.connect('https://voice-call-socket.herokuapp.com/');
 
@@ -25,6 +26,7 @@ function App() {
     const [leaveCallName, setLeaveCall] = useState();
     const [usersInCall, setUsersInCall] = useState([]);
     const [sendCall, setSendCall] = useState();
+    const [isActive, setIsActive] = useState(false);
     const options = {
         appId: "0c962528da524ac1a646aa034f8b5385",
         channel: "test",
@@ -54,6 +56,7 @@ function App() {
 
     const changeStatusToActive = () => {
         socket.emit('create_user', { name })
+        setIsActive(true)
     }
     
     const createCall = (token, id, nameUser) => {
@@ -174,9 +177,15 @@ function App() {
                             <Box sx={{margin: '2rem auto', width: '300px'}}>
                                 <TextField onChange={(event) => setName(event.target.value)} variant='standard' label='Ingresa tu nombre' />
                             </Box>
-                            <Box sx={{margin: '0 auto', width: '300px'}}>
-                                <Button variant="outlined" size='small' onClick={() => changeStatusToActive()}>Unirte</Button>
-                            </Box>
+                            {isActive ?
+                                <Typography variant="h6" gutterBottom component="div" color='green'>
+                                    En linea
+                                </Typography>
+                            :
+                                <Box sx={{margin: '0 auto', width: '300px'}}>
+                                    <Button variant="outlined" size='small' onClick={() => changeStatusToActive()}>Unirte</Button>
+                                </Box>
+                            }
                         </Grid>
                     </Grid>
                 </Box>

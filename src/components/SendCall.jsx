@@ -26,7 +26,7 @@ export default function SendCall({open, declineCall, callInProsess, call}) {
             }
             sx={{ mb: 2 }}
             >
-                {callInProsess ? 'En llamada con' : 'Llamando a '} { call?.name }
+                {callInProsess ? 'En llamada con ' : 'Llamando a '} { call?.name }
             </Alert>
         </Collapse>
         </Box>
