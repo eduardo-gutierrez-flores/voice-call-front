@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/voice-call-front/static/css/main.a617e044.chunk.css",
-    "main.js": "/voice-call-front/static/js/main.dd18c4ce.chunk.js",
-    "main.js.map": "/voice-call-front/static/js/main.dd18c4ce.chunk.js.map",
+    "main.js": "/voice-call-front/static/js/main.d674b124.chunk.js",
+    "main.js.map": "/voice-call-front/static/js/main.d674b124.chunk.js.map",
     "runtime-main.js": "/voice-call-front/static/js/runtime-main.621580fb.js",
     "runtime-main.js.map": "/voice-call-front/static/js/runtime-main.621580fb.js.map",
     "static/js/2.6f565a71.chunk.js": "/voice-call-front/static/js/2.6f565a71.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.621580fb.js",
     "static/js/2.6f565a71.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.dd18c4ce.chunk.js"
+    "static/js/main.d674b124.chunk.js"
   ]
 }
