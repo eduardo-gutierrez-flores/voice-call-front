@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import IconButton from '@mui/material/IconButton';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
-import CallEndIcon from '@mui/icons-material/CallEnd';
+// import CallEndIcon from '@mui/icons-material/CallEnd';
 import { SvgIcon } from "@mui/material";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -37,10 +37,10 @@ const PhoneCard = ({user, initCall, rtc, callInProsess, userInCall}) => {
         await rtc.client.publish([rtc.localAudioTrack])
     }
 
-    const leaveCall = async () => {
-        rtc.localAudioTrack.close();
-        await rtc.client.leave();
-    }
+    // const leaveCall = async () => {
+    //     rtc.localAudioTrack.close();
+    //     await rtc.client.leave();
+    // }
 
     const getAvatar = (name) => {
         const separate = name.split(' ');
@@ -72,9 +72,9 @@ const PhoneCard = ({user, initCall, rtc, callInProsess, userInCall}) => {
                         <IconButton aria-label="next" onClick={createCall}>
                             <SvgIcon component={AddIcCallIcon} inheritViewBox color="green" />
                         </IconButton>
-                        <IconButton aria-label="play/pause" onClick={leaveCall}>
+                        {/* <IconButton aria-label="play/pause" onClick={leaveCall}>
                             <SvgIcon component={CallEndIcon} inheritViewBox />
-                        </IconButton>
+                        </IconButton> */}
                     </Box>
                     : null
                 }

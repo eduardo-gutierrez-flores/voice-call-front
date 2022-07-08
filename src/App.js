@@ -14,7 +14,7 @@ import AgoraRTC from "agora-rtc-sdk-ng";
 import LeaveAlert from './components/LeaveAlert'
 import SendCall from './components/SendCall';
 
-const socket = io.connect('https://voice-call-socket.herokuapp.com/');
+const socket = io.connect('http://localhost:3001/');
 
 function App() {
     const [call, setCall] = useState()
@@ -107,9 +107,22 @@ function App() {
         setSendCall(undefined)
     }
 
+    const cancelCall = () => {
+        socket.emit('cancel_call', {
+            name,
+            id: sendCall.id,
+            token: sendCall.token,
+            room: sendCall.room,
+            idEmit: sendCall.idEmit
+        })
+        leaveCall()
+    }
+
     useEffect(() => {
         socket.on('new_active', (data) => {
-            setUsers((value) => [...value.filter((user) => user.id !== data.id), data]);
+            console.log(data);
+            const usersFilter = data.filter((user) => !users.some((u) => u.id === user.id) && user.id !== socket.id)
+            setUsers([...usersFilter]);
         });
         socket.on('recive_call', (data) => {
             console.log(data);
@@ -128,6 +141,7 @@ function App() {
             }
             setUsersInCall(data)
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [call?.id, sendCall?.id]);
     return (
         <div className="App">
@@ -135,7 +149,7 @@ function App() {
                 open={sendCall !== undefined && !leaveCallName}
                 call={sendCall}
                 callInProsess={usersInCall.some((id) => id === sendCall?.id)}
-                declineCall={leaveCall}
+                declineCall={cancelCall}
             />
             <CallAlert open={call !== undefined && !leaveCallName} declineCall={() => leaveCall()} reciveCall={() => joinCall()} callInProsess={callInProsess} call={call} />
             <LeaveAlert open={leaveCallName !== undefined} onClose={() => {leaveCall(); setLeaveCall(undefined)}} name={leaveCallName?.name} />
