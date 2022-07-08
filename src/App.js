@@ -66,6 +66,7 @@ function App() {
     const joinCall = async () => {
         await rtc.client.join(options.appId, call.id, call.token, options.uid);
         rtc.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
+        await rtc.client.publish([rtc.localAudioTrack]);
 
         socket.emit('answer_call', {
             id: call.id,
